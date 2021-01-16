@@ -5,6 +5,34 @@ on:
 name: Update repository
 
 jobs:
+  build-packages:
+    name: Build packages
+    continue-on-error: true
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        package:
+          #- azure-cli
+          #- dotnet-core-bin
+          - pass-git-helper
+          #- j4-dmenu-desktop
+          #- minecraft-launcher
+          #- pulseaudio-ctl
+    steps:
+      - name: Clone package from AUR
+        uses: mdarocha/run-in-archlinux-action@v1
+        with:
+          commands: |
+            git clone https://aur.archlinux.org/${{ matrix.package }}.git package
+      - name: Build package
+        uses: mdarcocha/run-in-archlinux-action@v1
+        with:
+          commands: |
+            cd package/
+            makepkg -c -s
+      - run: |
+          find .
+
   deploy-to-azure:
     name: Push repository to Azure
     runs-on: ubuntu-latest
