@@ -6,6 +6,7 @@ name: Update repository
 
 jobs:
   deploy-to-azure:
+    runs-on: ubuntu-latest
     container: archlinux
     steps:
       - name: Azure Login
