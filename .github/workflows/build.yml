@@ -6,25 +6,23 @@ name: Update repository
 
 jobs:
   deploy-to-azure:
+    name: Push repository to Azure
     runs-on: ubuntu-latest
     steps:
-      - name: Azure Login
+      - name: Login to Azure
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Create test files
-        run: |
-          mkdir -p repository/
-          echo "test file" > repository/file
-
-      - name: Run script in Arch Linux
-        uses: mdarocha/run-in-archlinux-action@master
+      - name: Create repository database
+        uses: mdarocha/run-in-archlinux-action@v1
         with:
           commands: |
+            mkdir -p repository/
+            ls -al
             echo "test from arch linux" > repository/file2
 
-      - name: Upload files
+      - name: Upload repository to Azure Blob Storage
         uses: azure/CLI@v1
         with:
           inlineScript: |
