@@ -19,17 +19,12 @@ jobs:
           #- minecraft-launcher
           #- pulseaudio-ctl
     steps:
-      - name: Clone package from AUR
-        uses: mdarocha/run-in-archlinux-action@v1
-        with:
-          commands: |
-            git clone https://aur.archlinux.org/${{ matrix.package }}.git package
+      - uses: actions/checkout@v1
       - name: Build package
         uses: mdarocha/run-in-archlinux-action@master
         with:
           commands: |
-            cd package/
-            makepkg -c -s --noconfirm
+            ./scripts/build-package.sh ${{ matrix.package }}
       - run: |
           find .
 
