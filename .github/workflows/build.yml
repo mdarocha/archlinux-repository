@@ -18,6 +18,12 @@ jobs:
           mkdir -p repository/
           echo "test file" > repository/file
 
+      - name: Run script in Arch Linux
+        uses: mdarocha/run-in-archlinux-action
+        with:
+          commands: |
+            echo "test from arch linux" > repository/file2
+
       - name: Upload files
         uses: azure/CLI@v1
         with:
