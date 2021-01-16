@@ -22,5 +22,5 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az storage blob upload-batch -d repo -s repository/
+            az storage blob upload-batch --account-name markarchrepo -d repo -s repository/
 
