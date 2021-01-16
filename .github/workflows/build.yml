@@ -19,7 +19,7 @@ jobs:
           echo "test file" > repository/file
 
       - name: Run script in Arch Linux
-        uses: mdarocha/run-in-archlinux-action
+        uses: mdarocha/run-in-archlinux-action@master
         with:
           commands: |
             echo "test from arch linux" > repository/file2
