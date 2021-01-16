@@ -25,7 +25,7 @@ jobs:
           commands: |
             git clone https://aur.archlinux.org/${{ matrix.package }}.git package
       - name: Build package
-        uses: mdarocha/run-in-archlinux-action@v1
+        uses: mdarocha/run-in-archlinux-action@master
         with:
           commands: |
             cd package/
