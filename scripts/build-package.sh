@@ -4,10 +4,15 @@ set -e
 
 PACKAGE=$1
 
+echo "workspace: ${GITHUB_WORKSPACE}"
+
 CONTEXT=${GITHUB_WORKSPACE:=.}
 
 PKGREPO="${CONTEXT}/package"
 PKGDEST="${CONTEXT}/build"
+
+echo "repo: ${PKGREPO}"
+echo "dest: ${PKGDEST}"
 
 mkdir -p ${PKGREPO}
 mkdir -p ${PKGDEST}
