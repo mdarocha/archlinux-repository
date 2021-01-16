@@ -1,0 +1,26 @@
+on:
+  - push
+  - workflow_run
+
+name: Update repository
+
+jobs:
+  deploy-to-azure:
+    container: archlinux
+    steps:
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Create test files
+        run: |
+          mkdir -p repository/
+          echo "test file" > repository/file
+
+      - name: Upload files
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az storage blob upload-batch -d repo -s repository/
+
