@@ -1,6 +1,6 @@
 on:
   - push
-  - workflow_run
+  - workflow_dispatch
 
 name: Update repository
 
