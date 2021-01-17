@@ -68,7 +68,7 @@ jobs:
             ./scripts/setup-gpg.sh "${{ secrets.GPG_SIGN_KEY }}"
             mkdir -p repository/
             mv packages/*/* repository/
-            find repository/ -not -name '*.sig' | xargs | repo-add --sign repository/markarch.db.tar.xz
+            find repository/ -not -name '*.sig' | xargs repo-add --sign repository/markarch.db.tar.xz
       - name: Login to Azure
         uses: azure/login@v1
         with:
