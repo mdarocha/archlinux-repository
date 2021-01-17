@@ -44,6 +44,7 @@ jobs:
         uses: mdarocha/run-in-archlinux-action@v1
         with:
           commands: |
+            ./scripts/setup-gpg.sh
             ./scripts/build-package.sh ${{ matrix.package }}
       - uses: actions/upload-artifact@v2
         with:
@@ -63,9 +64,10 @@ jobs:
         uses: mdarocha/run-in-archlinux-action@v1
         with:
           commands: |
+            ./scripts/setup-gpg.sh
             mkdir -p repository/
             mv packages/*/* repository/
-            repo-add repository/markarch.db.tar.xz repository/*
+            repo-add --sign repository/markarch.db.tar.xz repository/*
             find .
       - name: Login to Azure
         uses: azure/login@v1

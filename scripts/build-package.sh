@@ -30,7 +30,7 @@ sudo sh -c "echo 'PKGDEST=${PKGDEST}' >> /etc/makepkg.conf"
 
 # enter cloned repo and run makepkg
 cd ${PKGREPO}
-makepkg -c -s --noconfirm
+makepkg -c -s --noconfirm --sign
 
 # go back to context
 cd ${CONTEXT}
