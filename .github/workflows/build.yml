@@ -12,32 +12,32 @@ jobs:
     strategy:
       matrix:
         package:
-          - aerc
+          # - aerc
           # - aseprite
-          - azure-cli
-          - datagrip
-          - dotnet-core-bin
-          - elm-bin
-          - elm-language-server
-          - fsharp-language-server
-          - getmail
+          # - azure-cli
+          # - datagrip
+          # - dotnet-core-bin
+          # - elm-bin
+          # - elm-language-server
+          # - fsharp-language-server
+          # - getmail
           # - godot
-          - gzdoom
-          - j4-dmenu-desktop
-          - libpostal-git
-          - minecraft-launcher
-          - multimc5
-          - neovim-git
-          - osm2pgsql
-          - pandoc-include-code
+          # - gzdoom
+          # - j4-dmenu-desktop
+          # - libpostal-git
+          # - minecraft-launcher
+          # - multimc5
+          # - neovim-git
+          # - osm2pgsql
+          # - pandoc-include-code
           - pass-git-helper
-          - pulseaudio-ctl
-          - spicetify-cli
-          - spotify
-          - unityhub
-          - wev
-          - words-pl
-          - zmusic
+          # - pulseaudio-ctl
+          # - spicetify-cli
+          # - spotify
+          # - unityhub
+          # - wev
+          # - words-pl
+          # - zmusic
     steps:
       - uses: actions/checkout@v2
       - name: Build package
@@ -68,7 +68,7 @@ jobs:
             ./scripts/setup-gpg.sh "${{ secrets.GPG_SIGN_KEY }}"
             mkdir -p repository/
             mv packages/*/* repository/
-            find repository/ ! -name "*.sig" | xargs | repo-add --sign repository/markarch.db.tar.xz
+            find repository/ -not -name '*.sig' | xargs | repo-add --sign repository/markarch.db.tar.xz
       - name: Login to Azure
         uses: azure/login@v1
         with:
