@@ -13,7 +13,7 @@ jobs:
       matrix:
         package:
           - aerc
-          - aseprite
+          # - aseprite
           - azure-cli
           - datagrip
           - dotnet-core-bin
@@ -21,7 +21,7 @@ jobs:
           - elm-language-server
           - fsharp-language-server
           - getmail
-          - godot
+          # - godot
           - gzdoom
           - j4-dmenu-desktop
           - libpostal-git
