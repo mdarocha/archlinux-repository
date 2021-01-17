@@ -27,7 +27,7 @@ jobs:
           - libpostal-git
           - minecraft-launcher
           - multimc5
-          - neovim-nightly-git
+          - neovim-git
           - osm2pgsql
           - pandoc-include-code
           - pass-git-helper
