@@ -20,6 +20,11 @@ mkdir -p ${PKGDEST}
 # clone pkgfile from aur
 git clone https://aur.archlinux.org/${PACKAGE}.git ${PKGREPO}
 
+# if found a hooks, run it
+if [[ -f hooks/pre-build/${PACKAGE} ]]; then
+    bash "hooks/pre-build/${PACKAGE}"
+fi
+
 # setup PKGDEST
 sudo sh -c "echo 'PKGDEST=${PKGDEST}' >> /etc/makepkg.conf"
 
