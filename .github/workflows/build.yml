@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build package
-        uses: mdarocha/run-in-archlinux-action@master
+        uses: mdarocha/run-in-archlinux-action@v1
         with:
           commands: |
             ./scripts/build-package.sh ${{ matrix.package }}
