@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-gpg --keyserver keys.gnupg.net --search-keys A1774C1B37DC1DCEDB65EE469B8450B91D1362C1
-gpg --lsign-key A1774C1B37DC1DCEDB65EE469B8450B91D1362C1
+key="A1774C1B37DC1DCEDB65EE469B8450B91D1362C1"
+gpg --keyserver keys.gnupg.net --recv-key ${key}
+gpg --lsign-key ${key}
 
 # vim:ft=bash
