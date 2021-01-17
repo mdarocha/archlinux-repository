@@ -44,7 +44,7 @@ jobs:
         uses: mdarocha/run-in-archlinux-action@v1
         with:
           commands: |
-            ./scripts/setup-gpg.sh
+            ./scripts/setup-gpg.sh "${{ secrets.GPG_SIGN_KEY }}"
             ./scripts/build-package.sh ${{ matrix.package }}
       - uses: actions/upload-artifact@v2
         with:
@@ -64,7 +64,7 @@ jobs:
         uses: mdarocha/run-in-archlinux-action@v1
         with:
           commands: |
-            ./scripts/setup-gpg.sh
+            ./scripts/setup-gpg.sh "${{ secrets.GPG_SIGN_KEY }}"
             mkdir -p repository/
             mv packages/*/* repository/
             repo-add --sign repository/markarch.db.tar.xz repository/*
