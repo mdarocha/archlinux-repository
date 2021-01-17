@@ -12,32 +12,32 @@ jobs:
     strategy:
       matrix:
         package:
-          # - aerc
-          # - aseprite
-          # - azure-cli
-          # - datagrip
-          # - dotnet-core-bin
-          # - elm-bin
-          # - elm-language-server
-          # - fsharp-language-server
-          # - getmail
-          # - godot
-          # - gzdoom
-          # - j4-dmenu-desktop
-          # - libpostal-git
-          # - minecraft-launcher
-          # - multimc5
-          # - neovim-git
-          # - osm2pgsql
-          # - pandoc-include-code
+          - aerc
+          - aseprite
+          - azure-cli
+          - datagrip
+          - dotnet-core-bin
+          - elm-bin
+          - elm-language-server
+          - fsharp-language-server
+          - getmail
+          - godot
+          - gzdoom
+          - j4-dmenu-desktop
+          - libpostal-git
+          - minecraft-launcher
+          - multimc5
+          - neovim-git
+          - osm2pgsql
+          - pandoc-include-code
           - pass-git-helper
-          # - pulseaudio-ctl
-          # - spicetify-cli
-          # - spotify
-          # - unityhub
-          # - wev
-          # - words-pl
-          # - zmusic
+          - pulseaudio-ctl
+          - spicetify-cli
+          - spotify
+          - unityhub
+          - wev
+          - words-pl
+          - zmusic
     steps:
       - uses: actions/checkout@v2
       - name: Build package
