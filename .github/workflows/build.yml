@@ -1,6 +1,8 @@
 on:
-  - push
-  - workflow_dispatch
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 1 * * *
 
 name: Update repository
 
