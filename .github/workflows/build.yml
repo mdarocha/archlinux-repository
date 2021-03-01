@@ -10,7 +10,7 @@ jobs:
   build-packages:
     name: Build packages
     continue-on-error: true
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     strategy:
       matrix:
         package:
@@ -55,7 +55,7 @@ jobs:
 
   deploy-to-azure:
     name: Push repository to Azure
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: build-packages
     steps:
       - uses: actions/checkout@v2
