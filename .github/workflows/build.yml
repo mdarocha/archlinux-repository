@@ -30,7 +30,6 @@ jobs:
           - minecraft-launcher
           - multimc5
           - neovim-git
-          - omnisharp-roslyn-bin
           - osm2pgsql
           - pandoc-include-code
           - pass-git-helper
