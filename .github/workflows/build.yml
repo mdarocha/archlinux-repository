@@ -24,6 +24,7 @@ jobs:
           - fsharp-language-server
           - getmail
           - godot
+          - go-jira-bin
           - gzdoom
           - j4-dmenu-desktop
           - libpostal-git
